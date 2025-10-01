@@ -5,6 +5,11 @@ public class Calculadora {
     private float num2;
 
     // Metodos
+
+
+    public Calculadora() {
+    }
+
     public float sumar() {
         return num1 + num2;
     }
