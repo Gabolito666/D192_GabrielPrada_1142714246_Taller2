@@ -2,6 +2,16 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        // Crear instancia para correr el formulario
+        InterfazGraficaCalculadora interfaz = new InterfazGraficaCalculadora();
+
+        /*
+        int a = 1;
+        while (a == 1) {
+            System.out.println(interfaz.getOperadorTextField2());
+        }
+        */
+
 
     }
 }

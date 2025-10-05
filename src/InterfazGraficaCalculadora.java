@@ -35,31 +35,32 @@ public class InterfazGraficaCalculadora {
 
     //Metodos
     public InterfazGraficaCalculadora() {
+        //hacer visible el formulario
+        JFrame frame = new JFrame("Calculadora");
+        frame.setContentPane(panelPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     public void sumaABButtonListener() {
         operacion = 1;
-        labelOperador.setText("+");
     }
 
     public void restaABButtonListener() {
         operacion = 2;
-        labelOperador.setText("-");
     }
 
     public void multiplicacionABButtonListener() {
         operacion = 3;
-        labelOperador.setText("*");
     }
 
     public void divisionABButtonListener() {
         operacion = 4;
-        labelOperador.setText("/");
     }
 
     public void potenciaABButtonListener() {
         operacion = 5;
-        labelOperador.setText("^");
     }
 
     public void resultadoButtonListener() {
@@ -194,6 +195,7 @@ public class InterfazGraficaCalculadora {
         }
     }
 
-
-
+    public String getOperadorTextField2() {
+        return operadorTextField2.getText();
+    }
 }
