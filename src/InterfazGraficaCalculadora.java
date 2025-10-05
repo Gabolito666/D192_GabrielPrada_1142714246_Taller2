@@ -1,4 +1,6 @@
-import javax.swing.*;
+import javax.swing.*;// Add this in your constructor or initialization method
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InterfazGraficaCalculadora {
 
@@ -41,6 +43,132 @@ public class InterfazGraficaCalculadora {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+        uno1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                uno1ButtonListener();
+            }
+        });
+
+        dos2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dos2ButtonListener();
+            }
+        });
+
+        tres3Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tres3ButtonListener();
+            }
+        });
+
+        cuatro4Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cuatro4ButtonListener();
+            }
+        });
+
+        cinco5Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cinco5ButtonListener();
+            }
+        });
+
+        seis6Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seis6ButtonListener();
+            }
+        });
+
+        siete7Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                siete7ButtonListener();
+            }
+        });
+
+        ocho8Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ocho8ButtonListener();
+            }
+        });
+
+        nueve9Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nueve9ButtonListener();
+            }
+        });
+
+        cero0Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cero0ButtonListener();
+            }
+        });
+
+        sumaABButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sumaABButtonListener();
+            }
+        });
+
+        borrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                borrarButtonListener();
+            }
+        });
+
+        potenciaABButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                potenciaABButtonListener();
+            }
+        });
+
+        restaABButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                restaABButtonListener();
+            }
+        });
+
+        multiplicacionABButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                multiplicacionABButtonListener();
+            }
+        });
+
+        divisionABButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                divisionABButtonListener();
+            }
+        });
+
+        resultadoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               resultadoButtonListener();
+            }
+        });
+
+        puntoDecButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                puntoDecButtonListener();
+            }
+        });
     }
 
     public void sumaABButtonListener() {
@@ -90,21 +218,26 @@ public class InterfazGraficaCalculadora {
                     return;
             }
             resultadoTextField3.setText(String.valueOf(resultado));
+            operacion = 0;
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(panelPrincipal, "Ingrese numeros validos");
         }
     }
 
     public void borrarButtonListener() {
-        operandoTextField1.setText("");
-        operadorTextField2.setText("");
-        resultadoTextField3.setText("");
-        labelOperador.setText("?");
-        operacion = 0;
+        if (operacion != 0) {
+            operadorTextField2.setText("");
+            operandoTextField1.setText("");
+            resultadoTextField3.setText("");
+        } else {
+            operandoTextField1.setText("");
+            operadorTextField2.setText("");
+            resultadoTextField3.setText("");
+        }
     }
 
     public void uno1ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "1");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "1");
@@ -112,7 +245,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void dos2ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "2");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "2");
@@ -120,7 +253,8 @@ public class InterfazGraficaCalculadora {
     }
 
     public void tres3ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "3");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "3");
@@ -128,7 +262,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void cuatro4ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "4");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "4");
@@ -136,7 +270,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void cinco5ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "5");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "5");
@@ -144,7 +278,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void seis6ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "6");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "6");
@@ -152,7 +286,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void siete7ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "7");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "7");
@@ -160,7 +294,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void ocho8ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "8");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "8");
@@ -168,7 +302,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void nueve9ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "9");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "9");
@@ -176,7 +310,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void cero0ButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             operadorTextField2.setText(operadorTextField2.getText() + "0");
         } else {
             operandoTextField1.setText(operandoTextField1.getText() + "0");
@@ -184,7 +318,7 @@ public class InterfazGraficaCalculadora {
     }
 
     public void puntoDecButtonListener() {
-        if (operadorTextField2.isFocusOwner()) {
+        if (operacion != 0) {
             if (!operadorTextField2.getText().contains(".")) {
                 operadorTextField2.setText(operadorTextField2.getText() + ".");
             }
@@ -193,9 +327,5 @@ public class InterfazGraficaCalculadora {
                 operandoTextField1.setText(operandoTextField1.getText() + ".");
             }
         }
-    }
-
-    public String getOperadorTextField2() {
-        return operadorTextField2.getText();
     }
 }
